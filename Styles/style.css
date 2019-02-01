@@ -1,8 +1,5 @@
-<style>
-
-    img {
-        width: 300px;
-        height: 300px;
+img {
+        margin-left: 50px;
     }
 
     h1 {
@@ -23,5 +20,31 @@
         background-color:red;
     }
 
+    h1 {
+        border: 1px solid red;
+        padding: 10px 100px 25px 80px;
+        height: 60px;
+        width: 76px;
 
-    </style>
+    }
+
+
+    /* .container {
+        width: 960px;
+        height: 130px;
+        margin: 0 auto;
+    } */
+
+    li {
+        display: inline;
+        border: solid 1px green;
+    }
+
+    /* li:first-child {
+        margin-right: 50px;
+    } */
+
+
+        li: first-of-type {
+            margin-right: 100px;
+        }
