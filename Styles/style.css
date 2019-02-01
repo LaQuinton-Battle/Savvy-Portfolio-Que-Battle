@@ -1,0 +1,27 @@
+<style>
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+
+    h1 {
+        color: red;
+        font-family: Arial;  
+    }
+
+    .blood {
+        color: rebeccapurple
+    }
+    
+    .green {
+        color: pink
+    }
+    
+
+    #content {
+        background-color:red;
+    }
+
+
+    </style>
