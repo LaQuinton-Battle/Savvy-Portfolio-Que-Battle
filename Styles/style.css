@@ -1,50 +1,144 @@
-img {
-        margin-left: 50px;
-    }
-
-    h1 {
-        color: red;
-        font-family: Arial;  
-    }
-
-    .blood {
-        color: rebeccapurple
-    }
+#content img {
+    margin-left: 40px;
+    position: static;
+    border-radius: 700px;
     
-    .green {
-        color: pink
-    }
+}
+
+h1 {
+    color: white;
+    font-family: Arial;
+}
+
+
+.container {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+#content {
+    background-color: black;
+    color: white;
+    text-align: justify;
+}
+
+video {
+    border-radius: 20px;
+    border: 5px solid black;
+    margin-left: 20px;
+}
+
+
+iframe {
+    border-radius: 25px;
+    border: 5px solid white;
+    margin-left: 20px;
+}
+
+
+#navigation li {
+        display: block;
+}
+
+#header {
+    background-color: black;
+    margin-top: 1.3em;
+}
+
+
+
+body {
+    background-color: gray;
+    font-size: 20px;
+}
+
+h3:first-of-type {
+    margin-top: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+figure {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
     
+}
 
-    #content {
-        background-color:red;
-    }
+ul li {
+    text-indent: 10px;
+}
 
-    h1 {
-        border: 1px solid red;
-        padding: 10px 100px 25px 80px;
-        height: 60px;
-        width: 76px;
+p:not(:first-of-type) {
+    margin: 10px 5px;
+}
 
-    }
+#navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+#navigation li {
+    display: block;
+}
+
+#navigation > ul > li, 
+#footer li {
+    display: inline;
+    padding: 5px;
+}
+
+#navigation > ul > li {
+    position: relative;
+    display: inline;
+    list-style: none;
+  }
 
 
-    /* .container {
-        width: 960px;
-        height: 130px;
-        margin: 0 auto;
-    } */
-
-    li {
-        display: inline;
-        border: solid 1px green;
-    }
-
-    /* li:first-child {
-        margin-right: 50px;
-    } */
+#navigation .dropdown {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    display: none;
+}
 
 
-        li: first-of-type {
-            margin-right: 100px;
-        }
+#navigation a:hover + .dropdown {
+    display: block;
+}
+
+#header {
+    background-color: Gray;
+    padding-top: 191px;
+}
+
+/* #navigation > ul > li > ul {
+    background-color: white;
+    display: none;
+    left: 0px;
+    position: absolute;
+    top: 32px;
+} */
+
+#navigation > ul > li:hover > ul {
+    display: block;
+}
+/* 
+#navigation>ul>li>ul {
+    background-color: yellow;
+    left: 74px;
+    position: absolute;
+    top: 84px;
+    display: none;
+} */
+
+#navigation>ul>li:hover>ul {
+    display: block;
+}
+
