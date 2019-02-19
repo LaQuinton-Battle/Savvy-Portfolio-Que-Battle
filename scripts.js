@@ -1,12 +1,24 @@
-var nameChecker = function() {
-    var name = prompt("Please enter your name!");
-    if (name === "") {
-        name = prompt("Forreal, enter your name!");
-    }   else {
 
-    document.querySelector("h1").textContent = `Hello, ${name}`;
-        }
+var name;
+
+var blankChecker = function blankChecker(){
+    if(name === ''){
+        name  = prompt('What is your name, for real this time?');
+
+        blankChecker();
     }
+};
 
-    nameChecker();
+var nameChecker = function nameChecker(){
+    name  = prompt('What is yo name cuh cuh?');
+
+    blankChecker();
+
     
+    document.querySelector('h1').textContent = `Hello, ${name}`;
+};
+
+
+nameChecker();
+
+
