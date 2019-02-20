@@ -9,10 +9,10 @@ var root = document.querySelector('#root');
 
 
 root.innerHTML = `
-${Navigation}
-${Footer}
-${Header}
-${Content}
+${Navigation()}
+${Footer()}
+${Header('"What does Que represent?"')}
+${Content()}
 `;
 
 // nameChecker();

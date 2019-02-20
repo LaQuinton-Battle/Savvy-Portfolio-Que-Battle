@@ -1,4 +1,5 @@
-export default `
+export default function Content(){
+    return `
 
 
 <div id="content">
@@ -11,3 +12,4 @@ export default `
 </hr>
 <h2>Visuals</h2>
 `;
+}
