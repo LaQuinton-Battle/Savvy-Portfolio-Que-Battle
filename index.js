@@ -4,23 +4,24 @@ import Header from './src/Header';
 import Content from './src/Content';
 // import nameChecker from './src/Greeter';
 
-var home = {
-    'title': 'Welcome to my Savvys Coders website!'
-};
+var State = {
+    'Home': {
+        'title': 'Welcome to my Savvys Coders website!'
+    },
 
 
-var blog = {
-    'title': 'Welcome to my blog!'
-};
+    'Blog': {
+        'title': 'Welcome to my blog!'
+    },
 
 
-var contact = {
-    'title': 'Welcome to my contact!'
-};
+    'Contact': {
+        'title': 'Welcome to my contact!'
+    },
 
-
-var projects = {
-    'title': 'Welcome to my projects!'
+    'Projects': {
+        'title': 'Welcome to my projects!'
+    }
 };
 
 
@@ -33,37 +34,39 @@ ${Footer(state)}
 ${Header(state.title)}
 ${Content(state)}
 `;
+
+
+    document.querySelector('#nav li:nth-child(1) > a').addEventListener('click', (e) => {
+        event.preventDefault();
+        render(State[event.target.textContent]);
+    });
+
+
+    document.querySelector('#nav li:nth-child(2) > a').addEventListener('click', (e) => {
+        event.preventDefault();
+        render(State[event.target.textContent]);
+        
+        // render(State.Blog);
+    });
+
+
+    document.querySelector('#nav li:nth-child(3) > a').addEventListener('click', (e) => {
+        event.preventDefault();
+        render(State[event.target.textContent]);
+
+        // render(State.Contact);
+    });
+
+
+    document.querySelector('#nav li:nth-child(4) > a').addEventListener('click', (e) => {
+        event.preventDefault();
+        render(State[event.target.textContent]);
+
+        // render(State.Projects);
+    });
 }
 
-render(home);
 
-
-document.querySelector('#nav li:nth-child(1) > a').addEventListener('click', (e) => {
-    console.log(e.preventDefault());
-    console.log(e.target.href);
-    render(home);
-});
-
-
-document.querySelector('#nav li:nth-child(2) > a').addEventListener('click', (e) => {
-    console.log(e.preventDefault());
-    console.log(e.target.href);
-    render(blog);
-});
-
-
-document.querySelector('#nav li:nth-child(3) > a').addEventListener('click', (e) => {
-    console.log(e.preventDefault());
-    console.log(e.target.href);
-    render(contact);
-});
-
-
-document.querySelector('#nav li:nth-child(4) > a').addEventListener('click', (e) => {
-    console.log(e.preventDefault());
-    console.log(e.target.href);
-    render(projects);
-});
-
+render(State.Home);
 
 // nameChecker();
