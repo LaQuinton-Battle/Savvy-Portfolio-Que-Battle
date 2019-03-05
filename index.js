@@ -2,24 +2,31 @@ import Navigation from './src/Navigation';
 import Footer from './src/Footer';
 import Header from './src/Header';
 import Content from './src/Content';
+import { startCase } from 'lodash';
+
+
 // import nameChecker from './src/Greeter';
 
 var State = {
     'Home': {
+        'links': [ 'Home', 'Contact', 'Projects' ],
         'title': 'Welcome to my Savvys Coders website!'
     },
 
 
     'Blog': {
+        'links': [ 'Home', 'Contact', 'Projects,' ],
         'title': 'Welcome to my blog!'
     },
 
 
     'Contact': {
+        'links': [ 'Home', 'Contact', 'Projects,'   ],
         'title': 'Welcome to my contact!'
     },
 
     'Projects': {
+        'links': [ 'Home', 'Contact', 'Projects', ],
         'title': 'Welcome to my projects!'
     }
 };
@@ -27,7 +34,21 @@ var State = {
 
 var root = document.querySelector('#root');
 
-function render(state){
+var render;
+
+function navHandler(e){
+    var destination = startCase(e.target.textContent);
+
+    e.preventDefault();
+
+    render(State[destination]);
+}
+
+
+render = function Render(state){
+    var links;
+    var i = 0;
+    
     root.innerHTML = `
 ${Navigation(state)}
 ${Footer(state)}
@@ -36,36 +57,19 @@ ${Content(state)}
 `;
 
 
-    document.querySelector('#nav li:nth-child(1) > a').addEventListener('click', (e) => {
-        event.preventDefault();
-        render(State[event.target.textContent]);
-    });
+    links = document.querySelectorAll('#nav > ul > li > a');
 
+    while(i < links.length){
+        links[i].addEventListener('click', (e) => {
+            e.preventDefault();
+            render(State[e.target.textContent]);
+        });
 
-    document.querySelector('#nav li:nth-child(2) > a').addEventListener('click', (e) => {
-        event.preventDefault();
-        render(State[event.target.textContent]);
-        
-        // render(State.Blog);
-    });
+        links[i].addEventListener('click', navHandler);
 
-
-    document.querySelector('#nav li:nth-child(3) > a').addEventListener('click', (e) => {
-        event.preventDefault();
-        render(State[event.target.textContent]);
-
-        // render(State.Contact);
-    });
-
-
-    document.querySelector('#nav li:nth-child(4) > a').addEventListener('click', (e) => {
-        event.preventDefault();
-        render(State[event.target.textContent]);
-
-        // render(State.Projects);
-    });
-}
-
+        i++;
+    }
+};
 
 render(State.Home);
 
