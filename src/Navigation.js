@@ -1,14 +1,47 @@
-function linkBuilder(linksArr){
-    var i;
-    var linksHTML = '';
+import { lowerCase } from 'lodash';
 
-    while(i < linksArr.length){
-        linksHTML += `<li><a href="./${linksArr[i]}">${linksArr[i]}</a><li>`;
-        i++;
-    }
+function linkBuilder(links){
+    var linkHTML = '';
+    var destination;
+    
+    
+    links.forEach((link) => {
+        if(link !== 'Home'){
+            destination = lowerCase(link);
+        }
 
-    return linksHTML;
+    
+        linkHTML += `
+        <li>
+        <a data-navigo href="./${destination}">;
+            ${link}
+           </a>
+          </li>  
+        `;
+    });
+
+    return linkHTML;
 }
+
+//     var linkHTML = links.map(link) => {
+//         var destination = '';
+
+//         if(link !== 'Home'){
+//             destination = lowerCase(link);
+//         }
+
+//         return `<li>
+//         <a data navigo href="./${destination}">;
+//             ${link}
+//         </a>
+//        </li>
+//     `;
+// }).join('');
+
+
+//     return linkHTML;
+// }
+
 
 export default function Navigation(state){
     return `
