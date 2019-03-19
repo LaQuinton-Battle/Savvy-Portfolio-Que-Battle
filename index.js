@@ -26,10 +26,10 @@ function render(state){
     }
 
     root.innerHTML = `
-    ${Navigation(state.links)}
+    ${Navigation(state)}
     ${Footer(state)}
     ${Header(state.title)}
-    ${Content(state.posts)}
+    ${Content(state)}
 `;
 
     router.updatePageLinks();
@@ -45,10 +45,3 @@ router
     .on('/:page', navHandler)
     .on('/', () => navHandler({ 'page': 'Home' }))
     .resolve();
-
-axios
-    .get('https://jsonplaceholder.typicode.com/posts')
-    .then(((response) => console.log((response.data))
-    
-    )
-    ); 

@@ -47,7 +47,6 @@ export default function Navigation(state){
     return `
     <div id="nav">
             <ul class="Container">
-                ${linkBuilder(state.links)}
                 <li> <a class="facepic" href=".">Home</a></li>
                 <li> <a class="facepic" href="./blog">Blog</a></li>
                 <li> <a class="facepic" href="./contact">Contact</a></li>
